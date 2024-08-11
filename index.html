@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Web Design Portfolio</title>
+    <!--파비콘-->
+    <link rel="shortcut icon" href="./IMG/icon_logo.png" type="image/x-icon">
+	
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+
+		body{
+			background: url(./IMG/background.jpg) repeat-y center top;
+			background-size: contain;
+		}
+
+		.fixed_box {
+			position: fixed;
+			bottom: 40px;
+			right: 30px;
+			border-radius: 50%;
+		}
+		.fixed_box img:hover{
+			transform: translateY(-10px);
+			transition: all 0.5s;
+			box-shadow: 0 10px 5px rgba(0,0,0,0.5);
+		}
+		.fixed_box img{
+			transition: all 0.5s;
+			border-radius: 50%;
+		}
+
+		#top {
+			max-width: 1320px;
+			margin: 0 auto;
+		}
+
+		#top img {
+			width: 100%;
+			display: block;
+			box-shadow: 0 0 20px rgba(0,0,0,0.8);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="top">
+		<img src="./IMG/1.jpg" class="guide1">
+		<img src="./IMG/2.jpg" class="guide2">
+		<img src="./IMG/3.jpg" class="guide3">
+		<img src="./IMG/4.jpg" class="guide4">
+		<img src="./IMG/5.jpg" class="guide5">
+		<img src="./IMG/6.jpg" class="guide6">
+		<img src="./IMG/7.jpg" class="guide7">
+		<img src="./IMG/8.jpg" class="guide8">
+		<img src="./IMG/9.jpg" class="guide9">
+		<img src="./IMG/10.jpg" class="guide10">
+		<img src="./IMG/11.jpg" class="guide11">
+		<img src="./IMG/12.jpg" class="guide12">
+		<img src="./IMG/13.jpg" class="guide13">
+		<img src="./IMG/14.jpg" class="guide14">
+		<img src="./IMG/15.jpg" class="guide15">
+		<img src="./IMG/16.jpg" class="guide16">
+		<img src="./IMG/17.jpg" class="guide17">
+		<img src="./IMG/18.jpg" class="guide18">
+		<img src="./IMG/19.jpg" class="guide19">
+		<img src="./IMG/20.jpg" class="guide20">
+		<img src="./IMG/21.jpg" class="guide21">
+		<img src="./IMG/22.jpg" class="guide22">
+		<img src="./IMG/23.jpg" class="guide23">
+		<img src="./IMG/24.jpg" class="guide24">
+		<img src="./IMG/25.jpg" class="guide25">
+		<img src="./IMG/26.jpg" class="guide26">
+		<img src="./IMG/27.jpg" class="guide27">
+		<img src="./IMG/28.jpg" class="guide28">
+		<img src="./IMG/29.jpg" class="guide29">
+
+	</div>
+	<div class="fixed_box">
+		<a href="#top" class="top_btn"><!--href부분은 이미지를 감싼 div에 있는 id이름과 동일하게 설정.-->
+			<img src="IMG/top.png" alt="top">
+		</a>
+	</div>
+
+
+	<!--이동시 부드럽게 이동시키기 위해 추가한 구문 시작. script쪽 전부 삭제가능.-->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script>
+		$(function () {
+			$('a[href*="#"]:not([href="#"])').click(function () {
+				if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+					if (target.length) {
+						$('html, body').animate({
+							scrollTop: target.offset().top
+						}, 500);//움직이는 시간 조정
+						return false;
+					}
+				}
+			});
+		});
+	</script>
+	<!--이동시 부드럽게 이동시키기 위해 추가한 구문 끝. 삭제가능.-->
+</body>
+
+</html>
